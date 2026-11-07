@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender Equity, Anti-Harassment & Non-Discrimination | Global Platform</title>
+
+    <!-- Google Fonts & FontAwesome CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,300&display=display" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --unesco-navy: #0F2B5C;
+            --unesco-blue: #0055B8;
+            --unesco-sky: #E8F1FC;
+            --unesco-accent: #FFC72C;
+            --unesco-accent-hover: #E0AB00;
+            --unesco-dark-navy: #081B3B;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+            --danger-red: #DC2626;
+            --success-green: #16A34A;
+            --card-shadow: 0 4px 20px -2px rgba(15, 43, 92, 0.08);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .serif-font {
+            font-family: 'Merriweather', serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Container Limit */
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Top Announcement Bar */
+        .top-bar {
+            background-color: var(--unesco-dark-navy);
+            color: #94A3B8;
+            font-size: 0.75rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge-academic {
+            background-color: rgba(0, 85, 184, 0.4);
+            color: #E2E8F0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Header Navigation */
+        .header {
+            background-color: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, var(--unesco-navy), var(--unesco-blue));
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 10px rgba(0, 85, 184, 0.3);
+        }
+
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--unesco-navy);
+            line-height: 1.1;
+        }
+
+        .brand-subtitle {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--unesco-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #475569;
+            transition: color var(--transition-speed);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--unesco-blue);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--unesco-blue);
+            border-radius: 2px;
+        }
+
+        .cta-btn {
+            background-color: var(--unesco-blue);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.65rem 1.25rem;
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--unesco-dark-navy);
+            box-shadow: 0 4px 12px rgba(15, 43, 92, 0.25);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--unesco-navy);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--unesco-dark-navy) 0%, var(--unesco-navy) 60%, var(--unesco-blue) 100%);
+            color: white;
+            padding: 5rem 0 6rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('./scale.webp') center/cover no-repeat;
+            opacity: 0.22;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 30px;
+            backdrop-filter: blur(8px);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--unesco-sky);
+        }
+
+        .hero-title {
+            font-size: 2.75rem;
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title span {
+            color: var(--unesco-accent);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #CBD5E1;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-accent {
+            background-color: var(--unesco-accent);
+            color: var(--unesco-dark-navy);
+            font-weight: 700;
+            padding: 0.8rem 1.75rem;
+            border-radius: 6px;
+            transition: all var(--transition-speed);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-accent:hover {
+            background-color: var(--unesco-accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-white {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            font-weight: 600;
+            padding: 0.8rem 1.75rem;
+            border-radius: 6px;
+            backdrop-filter: blur(4px);
+            transition: all var(--transition-speed);
+        }
+
+        .btn-outline-white:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: white;
+        }
+
+        /* Section Commons */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--unesco-blue);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.1rem;
+            color: var(--unesco-navy);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
+            background-color: var(--unesco-blue);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Statistics Metrics Section */
+        .stats-section {
+            background-color: var(--unesco-sky);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2.25rem 1.75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 85, 184, 0.1);
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3.25rem;
+            font-weight: 800;
+            color: var(--unesco-navy);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .stat-label {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .stat-source {
+            font-size: 0.75rem;
+            color: var(--unesco-blue);
+            font-weight: 600;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Interactive Filterable Section: Crimes, Acts & Laws */
+        .crimes-section {
+            background-color: white;
+        }
+
+        .search-filter-box {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .search-filter-box {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex-grow: 1;
+        }
+
+        .search-input-wrapper i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color var(--transition-speed);
+        }
+
+        .search-input:focus {
+            border-color: var(--unesco-blue);
+            box-shadow: 0 0 0 3px rgba(0, 85, 184, 0.1);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--unesco-navy);
+            color: white;
+            border-color: var(--unesco-navy);
+        }
+
+        /* Grid for Crimes / Acts */
+        .crimes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .crime-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .crime-card:hover {
+            border-color: var(--unesco-blue);
+            box-shadow: 0 8px 25px rgba(0, 85, 184, 0.12);
+        }
+
+        .crime-header {
+            padding: 1.25rem 1.5rem;
+            background: #FAFAFA;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .crime-category-tag {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-street { background: #FEF2F2; color: #DC2626; }
+        .tag-workplace { background: #FFFBEB; color: #D97706; }
+        .tag-online { background: #F0FDF4; color: #16A34A; }
+        .tag-discrim { background: #F3E8FF; color: #9333EA; }
+
+        .crime-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .crime-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--unesco-navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .crime-acts-list {
+            list-style: none;
+            margin-bottom: 1.25rem;
+        }
+
+        .crime-acts-list li {
+            font-size: 0.85rem;
+            color: #475569;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .crime-acts-list li::before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.65rem;
+            color: var(--unesco-blue);
+            position: absolute;
+            left: 0;
+            top: 4px;
+        }
+
+        .crime-law-badge {
+            background-color: var(--unesco-sky);
+            border-left: 3px solid var(--unesco-blue);
+            padding: 0.75rem 1rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 1rem;
+        }
+
+        .law-title-text {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--unesco-navy);
+            display: block;
+        }
+
+        .law-penalty-text {
+            font-size: 0.75rem;
+            color: #475569;
+            margin-top: 2px;
+        }
+
+        .crime-footer {
+            padding: 1rem 1.5rem;
+            background-color: #FAFBFD;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-link-details {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--unesco-blue);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-link-details:hover {
+            text-decoration: underline;
+        }
+
+        /* Laws & Legal Framework Section */
+        .laws-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .laws-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .law-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .law-card {
+                grid-template-columns: 220px 1fr;
+            }
+        }
+
+        .law-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 6px;
+            background-color: var(--unesco-blue);
+        }
+
+        .law-meta {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .law-meta {
+                border-bottom: none;
+                border-right: 1px solid var(--border-color);
+                padding-bottom: 0;
+                padding-right: 1.5rem;
+            }
+        }
+
+        .law-number {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--unesco-navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .law-alias {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--unesco-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .law-year {
+            font-size: 0.75rem;
+            background: #F1F5F9;
+            color: var(--text-muted);
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .law-content-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--unesco-navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .law-summary {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .law-key-provisions {
+            background-color: var(--bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.825rem;
+        }
+
+        .law-key-provisions strong {
+            color: var(--unesco-navy);
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Action & Reporting Section */
+        .action-section {
+            background: white;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .action-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Interactive Simulator Form */
+        .form-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.25rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-box-title {
+            font-size: 1.35rem;
+            color: var(--unesco-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-box-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--unesco-navy);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            background: white;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            border-color: var(--unesco-blue);
+            box-shadow: 0 0 0 3px rgba(0, 85, 184, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .hotlines-card {
+            background: linear-gradient(135deg, var(--unesco-navy), var(--unesco-dark-navy));
+            color: white;
+            border-radius: 12px;
+            padding: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hotline-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hotline-item:last-child {
+            border-bottom: none;
+        }
+
+        .hotline-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--unesco-accent);
+            flex-shrink: 0;
+        }
+
+        .hotline-number {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .hotline-name {
+            font-size: 0.8rem;
+            color: #94A3B8;
+        }
+
+        /* References & Footnotes Section */
+        .references-section {
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            padding: 3.5rem 0;
+        }
+
+        .ref-box {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 0.825rem;
+            color: #475569;
+        }
+
+        .ref-list {
+            list-style-type: none;
+        }
+
+        .ref-list li {
+            margin-bottom: 0.85rem;
+            padding-left: 1.75rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .ref-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .ref-index {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 800;
+            color: var(--unesco-blue);
+        }
+
+        /* Modal Dialog for Crime Details */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(15, 43, 92, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-speed);
+        }
+
+        .modal-backdrop.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background: white;
+            border-radius: 12px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: scale(0.95);
+            transition: transform var(--transition-speed);
+        }
+
+        .modal-backdrop.open .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            background: var(--unesco-navy);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity var(--transition-speed);
+        }
+
+        .modal-close:hover {
+            opacity: 1;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--unesco-dark-navy);
+            color: #94A3B8;
+            padding: 4rem 0 2rem;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        /* Responsive Mobile Styles */
+        @media (max-width: 868px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.25rem;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform var(--transition-speed);
+            }
+
+            .nav-menu.mobile-open {
+                transform: translateY(0);
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Academic Announcement Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div>
+                <span class="badge-academic">Academic Midterm Project</span>
+                <span style="margin-left: 8px;">Gender-Responsive Digital Advocacy Platform</span>
+            </div>
+            <div>
+                <span><i class="fa-solid fa-scale-balanced" style="margin-right: 4px;"></i> Republic Act 11313 & RA 7877 Compliant</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- UNESCO Style Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="brand-logo">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-hand-holding-hand"></i>
+                </div>
+                <div>
+                    <div class="brand-title">EQUITY & SAFE SPACES</div>
+                    <div class="brand-subtitle">Anti-Harassment Portal</div>
+                </div>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#overview" class="nav-link active">Overview</a></li>
+                <li><a href="#statistics" class="nav-link">Statistics</a></li>
+                <li><a href="#crimes" class="nav-link">Crimes & Offenses</a></li>
+                <li><a href="#laws" class="nav-link">Legal Acts</a></li>
+                <li><a href="#action" class="nav-link">Take Action</a></li>
+                <li><a href="#action" class="cta-btn"><i class="fa-solid fa-shield-halved"></i> Emergency Hotline</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero" id="overview">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-breadcrumb">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Human Rights & Gender Equality Initiative</span>
+                </div>
+                <h1 class="hero-title">
+                    Eliminating Gender-Based <span>Harassment & Discrimination</span>
+                </h1>
+                <p class="hero-description">
+                    Promoting zero tolerance for gender-based violence, street harassment, digital abuse, and institutional discrimination. Empowering individuals through awareness of legal rights under the Safe Spaces Act and international conventions.
+                </p>
+                <div class="hero-actions">
+                    <a href="#crimes" class="btn-accent">
+                        Explore Crimes & Offenses <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="#laws" class="btn-outline-white">
+                        Review Legal Statutes <i class="fa-solid fa-gavel"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Statistics Section -->
+    <section class="section stats-section" id="statistics">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Global & Regional Evidence</span>
+                <h2 class="section-title">The Reality of Gender-Based Violations</h2>
+                <p class="section-subtitle">Empirical statistics on public harassment, digital abuse, and reporting barriers worldwide.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="stats-grid">
+                <!-- Stat Card 1 -->
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-number"><span class="counter" data-target="88">0</span>%</div>
+                        <div class="stat-label">Public Street Harassment</div>
+                        <p class="stat-desc">Of women aged 18–24 in urban areas have experienced catcalling, uninvited sexual remarks, or stalking in public spaces.</p>
+                    </div>
+                    <div class="stat-source">
+                        <span>Source: UN Women (2022)</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-number"><span class="counter" data-target="58">0</span>%</div>
+                        <div class="stat-label">Online Gender Harassment</div>
+                        <p class="stat-desc">Of girls and young women globally have faced online harassment, cyberflashing, or targeted trolling on social platforms.</p>
+                    </div>
+                    <div class="stat-source">
+                        <span>Source: Plan International</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-number"><span class="counter" data-target="68">0</span>%</div>
+                        <div class="stat-label">Unreported Offenses</div>
+                        <p class="stat-desc">Of victims refrain from reporting sexual harassment in academic or workplace environments due to fear of retaliation.</p>
+                    </div>
+                    <div class="stat-source">
+                        <span>Source: Philippine Comm. on Women</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-number"><span class="counter" data-target="1">0</span> in <span style="font-size:2.5rem;">3</span></div>
+                        <div class="stat-label">Workplace Discrimination</div>
+                        <p class="stat-desc">Women report gender-based wage disparity or denial of career promotion opportunities in technical and corporate sectors.</p>
+                    </div>
+                    <div class="stat-source">
+                        <span>Source: ILO Report</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Crimes & Acts Section -->
+    <section class="section crimes-section" id="crimes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Offenses & Prohibited Acts</span>
+                <h2 class="section-title">Crimes, Acts & Penalties</h2>
+                <p class="section-subtitle">Understanding gender-based crimes under statutory laws and public space frameworks.</p>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Search and Category Filter -->
+            <div class="search-filter-box">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="crimeSearch" class="search-input" placeholder="Search specific act (e.g., Catcalling, Cyberflashing, Promotion Bias)...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-filter="all">All Offenses</button>
+                    <button class="tab-btn" data-filter="street">Public Spaces</button>
+                    <button class="tab-btn" data-filter="workplace">Workplace & School</button>
+                    <button class="tab-btn" data-filter="online">Digital / Online</button>
+                    <button class="tab-btn" data-filter="discrim">Discrimination</button>
+                </div>
+            </div>
+
+            <!-- Crimes Cards Grid -->
+            <div class="crimes-grid" id="crimesGrid">
+                <!-- Card 1: Street Harassment -->
+                <div class="crime-card" data-category="street">
+                    <div class="crime-header">
+                        <span class="crime-category-tag tag-street">Public Spaces</span>
+                        <i class="fa-solid fa-person-walking text-slate-400"></i>
+                    </div>
+                    <div class="crime-body">
+                        <h3 class="crime-title">Catcalling & Public Leering</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Unwanted verbal or physical sexual actions performed in streets, public transport, parks, or commercial establishments.
+                        </p>
+                        <ul class="crime-acts-list">
+                            <li>Wolf-whistling, catcalling, and intrusive staring.</li>
+                            <li>Persistent uninvited requests for contact or personal details.</li>
+                            <li>Making derogatory sexual remarks or gestures.</li>
+                        </ul>
+                        <div class="crime-law-badge">
+                            <span class="law-title-text"><i class="fa-solid fa-gavel"></i> R.A. 11313 (Safe Spaces Act)</span>
+                            <span class="law-penalty-text">Fine up to ₱100,000 & community service or arresto mayor.</span>
+                        </div>
+                    </div>
+                    <div class="crime-footer">
+                        <span class="btn-link-details" onclick="openModal('catcalling')">View Legal Penalties <i class="fa-solid fa-chevron-right text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Workplace Harassment -->
+                <div class="crime-card" data-category="workplace">
+                    <div class="crime-header">
+                        <span class="crime-category-tag tag-workplace">Workplace & Academic</span>
+                        <i class="fa-solid fa-briefcase text-slate-400"></i>
+                    </div>
+                    <div class="crime-body">
+                        <h3 class="crime-title">Quid Pro Quo Sexual Harassment</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Demanding sexual favors in exchange for employment, grade advancement, hiring, or favorable treatment.
+                        </p>
+                        <ul class="crime-acts-list">
+                            <li>Conditioning hiring or promotion on sexual compliance.</li>
+                            <li>Creation of a hostile or intimidating working/learning environment.</li>
+                            <li>Abuse of supervisory or academic authority.</li>
+                        </ul>
+                        <div class="crime-law-badge">
+                            <span class="law-title-text"><i class="fa-solid fa-gavel"></i> R.A. 7877 & R.A. 11313</span>
+                            <span class="law-penalty-text">Imprisonment up to 6 months & administrative dismissal.</span>
+                        </div>
+                    </div>
+                    <div class="crime-footer">
+                        <span class="btn-link-details" onclick="openModal('quidproquo')">View Legal Penalties <i class="fa-solid fa-chevron-right text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Online Harassment -->
+                <div class="crime-card" data-category="online">
+                    <div class="crime-header">
+                        <span class="crime-category-tag tag-online">Digital & Online</span>
+                        <i class="fa-solid fa-laptop text-slate-400"></i>
+                    </div>
+                    <div class="crime-body">
+                        <h3 class="crime-title">Gender-Based Online Sexual Harassment</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Using Information and Communications Technology (ICT) to intimidate, harass, or demean individuals based on gender.
+                        </p>
+                        <ul class="crime-acts-list">
+                            <li>Cyberstalking and sending uninvited explicit photos (Cyberflashing).</li>
+                            <li>Unauthorized distribution of private intimate photos/videos.</li>
+                            <li>Creating fake social accounts to impersonate or defame victims.</li>
+                        </ul>
+                        <div class="crime-law-badge">
+                            <span class="law-title-text"><i class="fa-solid fa-gavel"></i> R.A. 11313 (Sec. 12)</span>
+                            <span class="law-penalty-text">Prision correccional or fines up to ₱500,000.</span>
+                        </div>
+                    </div>
+                    <div class="crime-footer">
+                        <span class="btn-link-details" onclick="openModal('online')">View Legal Penalties <i class="fa-solid fa-chevron-right text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Employment Discrimination -->
+                <div class="crime-card" data-category="discrim">
+                    <div class="crime-header">
+                        <span class="crime-category-tag tag-discrim">Institutional Discrimination</span>
+                        <i class="fa-solid fa-scale-unbalanced text-slate-400"></i>
+                    </div>
+                    <div class="crime-body">
+                        <h3 class="crime-title">Gender Discrimination in Employment</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Unfair wage gaps, denial of benefits, or refusal to hire based on gender identity, pregnancy, or marital status.
+                        </p>
+                        <ul class="crime-acts-list">
+                            <li>Paying lesser compensation to women for work of equal value.</li>
+                            <li>Dismissing female employees due to pregnancy or marriage.</li>
+                            <li>Barring women from promotion opportunities based on gender stereotypes.</li>
+                        </ul>
+                        <div class="crime-law-badge">
+                            <span class="law-title-text"><i class="fa-solid fa-gavel"></i> R.A. 9710 (Magna Carta of Women)</span>
+                            <span class="law-penalty-text">Civil damages, administrative sanctions & license revoking.</span>
+                        </div>
+                    </div>
+                    <div class="crime-footer">
+                        <span class="btn-link-details" onclick="openModal('discrimination')">View Legal Penalties <i class="fa-solid fa-chevron-right text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Physical Stalking & Groping -->
+                <div class="crime-card" data-category="street">
+                    <div class="crime-header">
+                        <span class="crime-category-tag tag-street">Public Spaces</span>
+                        <i class="fa-solid fa-hand-front-left text-slate-400"></i>
+                    </div>
+                    <div class="crime-body">
+                        <h3 class="crime-title">Stalking & Unwanted Physical Contact</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Physical touch without consent, invading personal space, or persistent unwanted physical tailing.
+                        </p>
+                        <ul class="crime-acts-list">
+                            <li>Groping, pinching, or rubbing against another person in public vehicles.</li>
+                            <li>Following a person persistently in public or near their residence.</li>
+                            <li>Blocking paths or physically restraining movement.</li>
+                        </ul>
+                        <div class="crime-law-badge">
+                            <span class="law-title-text"><i class="fa-solid fa-gavel"></i> R.A. 11313 (Sec. 11)</span>
+                            <span class="law-penalty-text">Arresto mayor in maximum period & fine up to ₱100,000.</span>
+                        </div>
+                    </div>
+                    <div class="crime-footer">
+                        <span class="btn-link-details" onclick="openModal('stalking')">View Legal Penalties <i class="fa-solid fa-chevron-right text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Card 6: Educational Misconduct -->
+                <div class="crime-card" data-category="workplace">
+                    <div class="crime-header">
+                        <span class="crime-category-tag tag-workplace">Academic Institutions</span>
+                        <i class="fa-solid fa-graduation-cap text-slate-400"></i>
+                    </div>
+                    <div class="crime-body">
+                        <h3 class="crime-title">Academic Harassment & Bias</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                            Gender bias or sexual misconduct perpetrated by faculty, staff, or peer students in schools/universities.
+                        </p>
+                        <ul class="crime-acts-list">
+                            <li>Faculty soliciting sexual favors for passing grades or honors.</li>
+                            <li>Peer-to-peer sexual harassment on campus or official university events.</li>
+                            <li>Exclusion of students from academic opportunities based on gender.</li>
+                        </ul>
+                        <div class="crime-law-badge">
+                            <span class="law-title-text"><i class="fa-solid fa-gavel"></i> R.A. 11313 Campus Rules</span>
+                            <span class="law-penalty-text">Expulsion, revocation of teaching license & criminal filing.</span>
+                        </div>
+                    </div>
+                    <div class="crime-footer">
+                        <span class="btn-link-details" onclick="openModal('academic')">View Legal Penalties <i class="fa-solid fa-chevron-right text-xs"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applicable Laws & Treaties Section -->
+    <section class="section laws-section" id="laws">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Statutory Frameworks</span>
+                <h2 class="section-title">Key Anti-Harassment Laws</h2>
+                <p class="section-subtitle">Core legislative acts safeguarding gender rights, dignity, and institutional accountability.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="laws-timeline">
+                <!-- Law 1: Safe Spaces Act -->
+                <div class="law-card">
+                    <div class="law-meta">
+                        <div class="law-number">Republic Act 11313</div>
+                        <div class="law-alias">Safe Spaces Act</div>
+                        <span class="law-year">Enacted 2019</span>
+                    </div>
+                    <div>
+                        <h3 class="law-content-title">Bawal Bastos Law (Safe Spaces Act)</h3>
+                        <p class="law-summary">
+                            Expands gender-based sexual harassment protection beyond the traditional workplace to streets, public spaces, commercial establishments, educational institutions, and online cyber platforms.
+                        </p>
+                        <div class="law-key-provisions">
+                            <strong><i class="fa-solid fa-check-circle text-unesco-blue"></i> Key Mandatory Provisions:</strong>
+                            Establishes Committee on Decorum and Investigation (CODI) in workplaces and schools; mandates installation of reporting mechanisms in LGUs; penalizes street catcalling and cyberstalking.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Law 2: Anti-Sexual Harassment Act -->
+                <div class="law-card">
+                    <div class="law-meta">
+                        <div class="law-number">Republic Act 7877</div>
+                        <div class="law-alias">Anti-Sexual Harassment Act</div>
+                        <span class="law-year">Enacted 1995</span>
+                    </div>
+                    <div>
+                        <h3 class="law-content-title">Anti-Sexual Harassment Act of 1995</h3>
+                        <p class="law-summary">
+                            Declares all forms of sexual harassment in the employment, education or training environment unlawful. Focuses primarily on hierarchical relationships where power dynamics exist.
+                        </p>
+                        <div class="law-key-provisions">
+                            <strong><i class="fa-solid fa-check-circle text-unesco-blue"></i> Key Mandatory Provisions:</strong>
+                            Declares employers/school heads solidarily liable for damages if they fail to act on reported complaints; penalizes abuse of authority by superiors or faculty.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Law 3: Magna Carta of Women -->
+                <div class="law-card">
+                    <div class="law-meta">
+                        <div class="law-number">Republic Act 9710</div>
+                        <div class="law-alias">Magna Carta of Women</div>
+                        <span class="law-year">Enacted 2009</span>
+                    </div>
+                    <div>
+                        <h3 class="law-content-title">The Magna Carta of Women</h3>
+                        <p class="law-summary">
+                            Comprehensive human rights law that seeks to eliminate discrimination against women by recognizing, protecting, and fulfilling their rights, particularly marginalized sectors.
+                        </p>
+                        <div class="law-key-provisions">
+                            <strong><i class="fa-solid fa-check-circle text-unesco-blue"></i> Key Mandatory Provisions:</strong>
+                            Guarantees equal treatment in employment, prohibits expulsion of pregnant students, mandates non-gender biased educational materials, and sets 5% GAD budget allocation in government.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Law 4: CEDAW treaty -->
+                <div class="law-card">
+                    <div class="law-meta">
+                        <div class="law-number">UN Treaty</div>
+                        <div class="law-alias">CEDAW Convention</div>
+                        <span class="law-year">Ratified 1981</span>
+                    </div>
+                    <div>
+                        <h3 class="law-content-title">Convention on the Elimination of All Forms of Discrimination against Women</h3>
+                        <p class="law-summary">
+                            Often described as an international bill of rights for women. Defines what constitutes discrimination against women and sets up an agenda for national action to end such discrimination.
+                        </p>
+                        <div class="law-key-provisions">
+                            <strong><i class="fa-solid fa-check-circle text-unesco-blue"></i> Key Mandatory Provisions:</strong>
+                            Articles 10 & 11 guarantee equal rights in education and employment opportunities, equal remuneration, and protection against maternity discrimination.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Hotlines -->
+    <section class="section action-section" id="action">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Emergency Support</span>
+                <h2 class="section-title">Get Help Now</h2>
+                <p class="section-subtitle">Reach out to official emergency desk hotlines and confidential support services.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="action-grid">
+                <div class="hotlines-card" style="max-width: 820px; margin: 0 auto; width: 100%;">
+                    <div>
+                        <h3 style="font-size: 1.4rem; font-family: 'Merriweather', serif; margin-bottom: 0.5rem; color: white;">
+                            Official Support Hotlines
+                        </h3>
+                        <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1.5rem;">
+                            Immediate assistance, legal counseling, and law enforcement desks for victims of gender-based violence.
+                        </p>
+
+                        <div class="hotline-item">
+                            <div class="hotline-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <div class="hotline-number">PNP Women & Children Protection</div>
+                                <div class="hotline-name">Emergency Desk: (02) 8723-0401 / 911</div>
+                            </div>
+                        </div>
+
+                        <div class="hotline-item">
+                            <div class="hotline-icon"><i class="fa-solid fa-building-shield"></i></div>
+                            <div>
+                                <div class="hotline-number">PCW Gender Helpline</div>
+                                <div class="hotline-name">Philippine Commission on Women: 8735-1654</div>
+                            </div>
+                        </div>
+
+                        <div class="hotline-item">
+                            <div class="hotline-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                            <div>
+                                <div class="hotline-number">Public Attorney's Office (PAO)</div>
+                                <div class="hotline-name">Legal Assistance: (02) 8929-9436</div>
+                            </div>
+                        </div>
+
+                        <div class="hotline-item">
+                            <div class="hotline-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                            <div>
+                                <div class="hotline-number">DOH National Mental Health Hotline</div>
+                                <div class="hotline-name">Counseling Support: 1553 / 0917-899-8727</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; font-size: 0.75rem; color: #64748B; text-align: center;">
+                        Available 24/7 for crisis intervention and confidential assistance.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Footnotes & References Section -->
+    <section class="references-section" id="references">
+        <div class="container">
+            <div style="margin-bottom: 1rem; font-weight: 700; color: var(--unesco-navy); font-size: 0.95rem;">
+                <i class="fa-solid fa-book-bookmark" style="margin-right: 6px; color: var(--unesco-blue);"></i> Academic References & Legal Citations
+            </div>
+            <div class="ref-box">
+                <ul class="ref-list">
+                    <li>
+                        <span class="ref-index">[1]</span>
+                        <strong>Republic of the Philippines.</strong> (2019). <em>Republic Act No. 11313: An Act Defining Gender-Based Sexual Harassment in Streets, Public Spaces, Online, Workplaces, and Educational or Training Institutions (Safe Spaces Act)</em>. Official Gazette.
+                    </li>
+                    <li>
+                        <span class="ref-index">[2]</span>
+                        <strong>Republic of the Philippines.</strong> (1995). <em>Republic Act No. 7877: Anti-Sexual Harassment Act of 1995</em>. Official Gazette.
+                    </li>
+                    <li>
+                        <span class="ref-index">[3]</span>
+                        <strong>Philippine Commission on Women (PCW).</strong> (2021). <em>Implementation Guidelines for the Safe Spaces Act and Gender Mainstreaming in Local Government Units</em>. PCW Policy Series.
+                    </li>
+                    <li>
+                        <span class="ref-index">[4]</span>
+                        <strong>UN Women.</strong> (2020). <em>COVID-19 and Ending Violence Against Women and Girls</em>. United Nations Entity for Gender Equality and the Empowerment of Women.
+                    </li>
+                    <li>
+                        <span class="ref-index">[5]</span>
+                        <strong>UNESCO.</strong> (2022). <em>Global Education Monitoring Report: Gender Report - Deepening the debate on gender equality</em>. UNESCO Publishing, Paris.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
+                        <div style="width: 32px; height: 32px; background: var(--unesco-blue); color: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+                            <i class="fa-solid fa-scale-balanced" style="font-size: 0.8rem;"></i>
+                        </div>
+                        <span style="color: white; font-weight: 800; font-size: 1.1rem;">Safe Spaces Platform</span>
+                    </div>
+                    <p style="font-size: 0.8rem; line-height: 1.6; color: #64748B;">
+                        A gender-responsive digital platform developed for Midterm Requirements. Designed following UNESCO structure, focusing on rights awareness, anti-harassment laws, and social advocacy.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Core Topics</h4>
+                    <ul class="footer-links">
+                        <li><a href="#crimes">Street & Public Harassment</a></li>
+                        <li><a href="#crimes">Workplace Misconduct</a></li>
+                        <li><a href="#crimes">Online Sexual Violence</a></li>
+                        <li><a href="#crimes">Gender Discrimination</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal Frameworks</h4>
+                    <ul class="footer-links">
+                        <li><a href="#laws">Safe Spaces Act (RA 11313)</a></li>
+                        <li><a href="#laws">Anti-Sexual Harassment (RA 7877)</a></li>
+                        <li><a href="#laws">Magna Carta of Women (RA 9710)</a></li>
+                        <li><a href="#laws">CEDAW Convention</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Academic Credits</h4>
+                    <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 0.5rem;">
+                        <strong>Project:</strong> Gender-Responsive Digital Platform
+                    </p>
+                    <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 0.5rem;">
+                        <strong>Group Size:</strong> 3 to 4 Student Members
+                    </p>
+                    <p style="font-size: 0.8rem; color: #64748B;">
+                        <strong>Target SDGs:</strong> Goal 5 (Gender Equality) & Goal 16 (Peace, Justice)
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 Academic Gender Platfoorm.
+                </div>
+                <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+                    <a href="#overview">Privacy Policy</a>
+                    <a href="#overview">Terms of Advocacy</a>
+                    <a href="#references">References</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Detail Modal Dialog -->
+    <div class="modal-backdrop" id="detailModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modalTitle" style="font-size: 1.1rem; font-weight: 700;">Crime Details & Statutory Penalties</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
